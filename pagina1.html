@@ -1,0 +1,93 @@
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                /* background-image: url('afbeeldingen/grotefoto.jpg'); */
+            }
+            header{
+                border: 1px solid red;
+            }
+            #veranderdit{
+                color: rgb(200, 100, 100);
+                text-align: 
+            }
+            .ditwilikookveranderen{
+                color: rgba(100, 50, 150, 30);
+                padding: 30px;
+                background-color: bisque;
+            }
+            .enditook{
+                background-color: aqua;
+                color: purple;
+                margin: 30px;
+            }
+        </style>
+        <script>
+            var studenten;
+            window.onload = uitlezen;
+            function inschrijven(){
+                var student = {};
+                student.firstname = document.getElementById("fvoornaam").value;
+                student.lastname = document.getElementById("fachternaam").value;
+                student.birthdate = document.getElementById("fgebdatum").value;
+                studenten.push(student);
+                var studentenJson = JSON.stringify(studenten);
+                localStorage.setItem("mijnstudenten", studentenJson);
+ 
+            }
+            function uitlezen(){
+                var opTeHalen = localStorage.getItem("mijnstudenten");
+                console.log(opTeHalen);
+                var opgehaaldObject = JSON.parse(opTeHalen);
+                console.log(opgehaaldObject);
+                studenten = opgehaaldObject;
+            }
+            function starten(){
+                studenten = [];
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <button onclick=starten()>go</button>
+            <form>
+                Voornaam: <input type="text" id="fvoornaam">
+                <br>
+                Achternaam: <input type="text" id="fachternaam">
+                <br>
+                GeboorteDatum: <input type="date" id="fgebdatum">
+                <br>
+                <input type=button value="inschrijven" onclick="inschrijven()">
+                <input type="button" value="uitlezen" onclick="uitlezen()">
+                <ol type="A"> 
+                    <li>hoi</li>
+                    <li>doei</li>
+                </ol>
+                <p id = "veranderdit">
+                        In een nieuwe aflevering moet Randy, de vader van een van de hoofdpersonages, slavenarbeid verrichten nadat hij gevangen wordt genomen tijdens een bezoek aan China. Ook moet hij zich onderwerpen aan de Communistische Partij van China.
+
+                        De meeste South Park-afleveringen zijn nu onbeschikbaar in China. "We heten de Chinese censuur welkom in onze huizen en onze harten", luidt het excuus. "Lang leve de Communistische Partij! Ook wij houden meer van geld dan vrijheid en democratie."
+                        
+                        Vermoedelijk viel ook de rol die Winnie de Pooh in de aflevering speelde niet in goede aarde bij de Chinese regering. Winnie de Pooh is eerder verbannen in China omdat hij op internet werd vergeleken met president Xi Jinping.
+                </p>
+                <p class = "ditwilikookveranderen">
+                        In een nieuwe aflevering moet Randy, de vader van een van de hoofdpersonages, slavenarbeid verrichten nadat hij gevangen wordt genomen tijdens een bezoek aan China. Ook moet hij zich onderwerpen aan de Communistische Partij van China.
+
+                        De meeste South Park-afleveringen zijn nu onbeschikbaar in China. "We heten de Chinese censuur welkom in onze huizen en onze harten", luidt het excuus. "Lang leve de Communistische Partij! Ook wij houden meer van geld dan vrijheid en democratie."
+                        
+                        Vermoedelijk viel ook de rol die Winnie de Pooh in de aflevering speelde niet in goede aarde bij de Chinese regering. Winnie de Pooh is eerder verbannen in China omdat hij op internet werd vergeleken met president Xi Jinping.
+                </p>
+                <p class = "enditook">
+                        In een nieuwe aflevering moet Randy, de vader van een van de hoofdpersonages, slavenarbeid verrichten nadat hij gevangen wordt genomen tijdens een bezoek aan China. Ook moet hij zich onderwerpen aan de Communistische Partij van China.
+
+                        De meeste South Park-afleveringen zijn nu onbeschikbaar in China. "We heten de Chinese censuur welkom in onze huizen en onze harten", luidt het excuus. "Lang leve de Communistische Partij! Ook wij houden meer van geld dan vrijheid en democratie."
+                        
+                        Vermoedelijk viel ook de rol die Winnie de Pooh in de aflevering speelde niet in goede aarde bij de Chinese regering. Winnie de Pooh is eerder verbannen in China omdat hij op internet werd vergeleken met president Xi Jinping.
+                </p>
+                <a href="pagina2.html">Klik hier voor pagina 2</a>
+            </form>
+        </header>
+    </body>
+</html>
